@@ -1,0 +1,120 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+#navbarDropdown {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+    font-weight: bold;
+}
+
+.nav-item, .navbar-brand {
+    font-weight: bold;
+    color: darkgoldenrod;
+}
+
+footer {
+    background-color: black;
+    color: darkgoldenrod !important;
+    text-align: center;
+}
+
+
+.search {
+    width: 100%;
+    position: relative;
+    display: flex;
+}
+
+.searchTerm {
+    width: 100%;
+    border: 3px solid;
+    border-right: none;
+    padding: 5px;
+    height: 40px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: black;
+    border-color: darkgoldenrod;
+}
+
+    .searchTerm:focus {
+        color: black;
+        border-color: gold;
+    }
+
+.searchButton {
+    width: 40px;
+    height: 40px;
+    border: 1px solid darkgoldenrod;
+    background: darkgoldenrod;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.wrap {
+    width: 30%;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/*Settings*/
+.settings {
+    border: 1px solid;
+    width: 50%;
+    text-align: center;
+    margin-left: 25%;
+    margin-top: 80px;
+    padding:20px;
+}
+
+#language,#currency,#country{
+    width:180px;
+    height: 40px;
+}
+
+.btnsave{
+    width: 70%;
+    height: 30px;
+    background-color: black;
+    color: white;
+}
+
+/*Contacts*/
+.contact {
+    border: 1px solid;
+    width: 50%;
+    text-align: center;
+    margin-left: 25%;
+    margin-top: 80px;
+    padding: 20px;
+}
+
+
+
+
+
+
+
+
