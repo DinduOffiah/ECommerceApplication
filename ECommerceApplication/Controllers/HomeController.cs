@@ -1,5 +1,7 @@
-﻿using ECommerceApplication.Models;
+﻿using ECommerceApplication.Data;
+using ECommerceApplication.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace ECommerceApplication.Controllers
@@ -7,15 +9,21 @@ namespace ECommerceApplication.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly ApplicationDbContext _context;
 
-        public HomeController(ILogger<HomeController> logger)
+
+        public HomeController(ILogger<HomeController> logger, ApplicationDbContext context)
         {
             _logger = logger;
+            _context = context;
         }
 
-        public IActionResult Index()
+        
+
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var items = await _context.Items.ToListAsync();
+            return View(items);
         }
 
         public IActionResult Privacy()
@@ -42,6 +50,7 @@ namespace ECommerceApplication.Controllers
         {
             return View();
         }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

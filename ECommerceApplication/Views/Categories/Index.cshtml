@@ -1,0 +1,35 @@
+﻿@model IEnumerable<ECommerceApplication.Models.Category>
+
+<button type="button" class="">
+    <a asp-action="Create" style="text-decoration:none; color: white">Create New</a>
+</button>
+<button type="button" style="margin-left:28cm">
+    <a asp-controller="Items" asp-action="Create" style="text-decoration:none; color: white">Create Item</a>
+</button>
+<div class="settings">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    <h3 style="text-align:center">@Html.DisplayNameFor(model => model.CategoryName)</h3>
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CategoryName)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.CategoryId">Edit</a> |
+                        @* @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) | *@
+                        <a asp-action="Delete" asp-route-id="@item.CategoryId">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

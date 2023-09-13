@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using ECommerceApplication.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace ECommerceApplication.Data
@@ -9,5 +10,10 @@ namespace ECommerceApplication.Data
             : base(options)
         {
         }
+
+        public DbSet<Category>? Categories { get; set; }
+        public DbSet<Item>?  Items{ get; set; }
+
+        public DbSet<SavedItem>? SavedItems { get; set; }
     }
 }

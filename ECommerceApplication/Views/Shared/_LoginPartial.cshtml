@@ -3,7 +3,7 @@
 @inject UserManager<IdentityUser> UserManager
 
 <ul class="navbar-nav">
-@if (SignInManager.IsSignedIn(User))
+@* @if (SignInManager.IsSignedIn(User))
 {
     <li class="nav-item">
         <a  class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity?.Name!</a>
@@ -22,5 +22,12 @@ else
     <li class="nav-item">
             <a class="nav-link" asp-area="Identity" asp-page="/Account/Cart" style="color:darkgoldenrod">Cart</a>
     </li>
-}
+} *@
+
+    <li class="nav-item">
+        <a class="nav-link" asp-area="" asp-controller="Authentication" asp-action="Login" style="color:darkgoldenrod">Login</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Help" style="color:darkgoldenrod">Cart</a>
+    </li>
 </ul>

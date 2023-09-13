@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IEnumerable<ECommerceApplication.Models.Item>
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -13,7 +15,38 @@
             </div>
         </div>
     </form>
-    <div class="display">
-
-    </div>
 </div>
+
+<div class="product-container">
+    @foreach (var item in Model.Take(15))
+    {
+        if (item != null)
+        {
+            <div class="product-card">
+                <div class="badge">Hot</div>
+                <div class="product-tumb">
+                    <img class="" src="@item.Image" alt="@item.Name" style="max-width: 150px" />
+                </div>
+                <div class="product-details">
+                    <span class="product-catagory">@Html.DisplayFor(modelItem => item.Category)</span>
+                    <h4>@Html.DisplayFor(modelItem => item.Name)</h4>
+                    <p>@Html.DisplayFor(modelItem => item.Description)</p>
+                    <div class="product-bottom-details">
+                        <div class="product-price">
+                            <small>N @Html.DisplayFor(modelItem => item.WasPrice)</small>N @Html.DisplayFor(modelItem => item.Price)
+                        </div>
+                        <div class="product-links">
+                            <a asp-controller="SavedItems" asp-action="Like" class="like" data-cardid="@item.ItemId" data-liked="false">
+                                <i class="fa fa-heart" id="heart-@item.ItemId"></i>
+                            </a>
+                            <a href="#" class="cart" data-cardid="@item.ItemId" data-carted="false">
+                                <i class="fa fa-shopping-cart" id="cart-@item.ItemId"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>
+

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ECommerceApplication.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="~/js/site.js"></script>
 </head>
 <body>
     <header>
@@ -26,7 +27,7 @@
                                 Category
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color:darkgray"> 
-                                <a class="dropdown-item" asp-controller="ControllerName" asp-action="ActionName">Electronics</a>
+                                <a class="dropdown-item" asp-controller="Categories" asp-action="Index">Electronics</a>
                                 <a class="dropdown-item" asp-controller="ControllerName" asp-action="ActionName">Clothings</a>
                                 <a class="dropdown-item" asp-controller="ControllerName" asp-action="ActionName">Books</a>
                                 <a class="dropdown-item" asp-controller="ControllerName" asp-action="ActionName">Home appliances</a>
@@ -34,6 +35,7 @@
                                 <a class="dropdown-item" asp-controller="ControllerName" asp-action="ActionName">Cosmetics</a>
                                 <a class="dropdown-item" asp-controller="ControllerName" asp-action="ActionName">Computer</a>
                                 <a class="dropdown-item" asp-controller="ControllerName" asp-action="ActionName">Phones and accessories</a>
+                                <a class="dropdown-item" asp-controller="ControllerName" asp-action="ActionName">Games and sports</a>
                             </div>
                         </li>
                         <li class="nav-item">
@@ -49,10 +51,10 @@
                             <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Settings" style="color:darkgoldenrod">Settings</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index" style="color:darkgoldenrod">Saved-items</a>
+                            <a class="nav-link" asp-area="" asp-controller="SavedItems" asp-action="Index" style="color:darkgoldenrod">Saved-items</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index" style="color:darkgoldenrod">Add-item</a>
+                            <a class="nav-link" asp-area="" asp-controller="Items" asp-action="Create" style="color:darkgoldenrod">Add-item</a>
                         </li>
                     </ul>
                     <partial name="_LoginPartial" />

@@ -8,14 +8,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Controllers\NewFolder\**" />
     <Compile Remove="Views\Home\NewFolder\**" />
-    <Compile Remove="Views\NewFolder\**" />
+    <Content Remove="Controllers\NewFolder\**" />
     <Content Remove="Views\Home\NewFolder\**" />
-    <Content Remove="Views\NewFolder\**" />
+    <EmbeddedResource Remove="Controllers\NewFolder\**" />
     <EmbeddedResource Remove="Views\Home\NewFolder\**" />
-    <EmbeddedResource Remove="Views\NewFolder\**" />
+    <None Remove="Controllers\NewFolder\**" />
     <None Remove="Views\Home\NewFolder\**" />
-    <None Remove="Views\NewFolder\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -32,6 +32,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.20" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.20" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.20" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.16" />
   </ItemGroup>
 
 </Project>
